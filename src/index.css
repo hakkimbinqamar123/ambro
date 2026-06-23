@@ -1,0 +1,42 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Lato:wght@300;400;700&family=Scheherazade+New:wght@400;700&display=swap');
+
+@theme {
+  --color-olive-dark: #3B4D2E;
+  --color-olive-light: #8DA37B;
+  --color-white-off: #F4F5F0;
+  --color-black-midnight: #0A0A0A;
+  --color-white-pearl: #FAF8F4;
+  --color-white-pure: #FFFFFF;
+
+  --font-display: "Cormorant Garamond", serif;
+  --font-arabic: "Scheherazade New", serif;
+  --font-body: "Lato", sans-serif;
+
+  --animate-marquee: marquee 20s linear infinite;
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50%)); }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-olive-dark text-white-pure font-body;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-medium;
+  }
+}
+
+/* Custom Utilities for smooth scrolling and scrollbar hiding */
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
