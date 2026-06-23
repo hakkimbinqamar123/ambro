@@ -1,10 +1,13 @@
 import React from 'react';
-import photo1 from '../assets/images/couple-photo-1.png';
-import photo2 from '../assets/images/couple-photo-2.png';
-import photo3 from '../assets/images/couple-photo-3.png';
+import photo1 from '../assets/images/1.jpg';
+import photo2 from '../assets/images/2.jpg';
+import photo3 from '../assets/images/3.jpg';
+import photo4 from '../assets/images/4.jpg';
+import photo5 from '../assets/images/5.jpg';
+import photo6 from '../assets/images/6.jpg';
 
 const MemoriesStrip = () => {
-  const photos = [photo1, photo2, photo3, photo1, photo2, photo3];
+  const photos = [photo1, photo2, photo3, photo4, photo5, photo6];
 
   return (
     <section className="py-16 bg-olive-dark overflow-hidden border-y border-olive-light/20 relative">

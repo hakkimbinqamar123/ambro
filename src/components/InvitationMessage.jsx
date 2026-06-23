@@ -42,7 +42,6 @@ const InvitationMessage = () => {
         
         <motion.p variants={itemVariants} className="font-body text-xl md:text-2xl leading-relaxed font-light mb-8 pt-4">
           With hearts full of joy and gratitude to Allah,<br/>
-          we, the family of <span className="font-bold">Hakki</span>,<br/>
           joyfully invite you to witness and celebrate<br/>
           the blessed union of our beloved
         </motion.p>

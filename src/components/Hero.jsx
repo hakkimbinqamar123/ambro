@@ -2,12 +2,12 @@ import React, { useRef, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import * as THREE from 'three';
-import bgImage from '../assets/images/ambro.png';
+import bgImage from '../assets/images/ambro.jpg';
 
 const Particles = ({ count = 500 }) => {
   const mesh = useRef(null);
   const dummy = useMemo(() => new THREE.Object3D(), []);
-  
+
   const particles = useMemo(() => {
     const temp = [];
     for (let i = 0; i < count; i++) {
@@ -29,7 +29,7 @@ const Particles = ({ count = 500 }) => {
       const a = Math.cos(t) + Math.sin(t * 1) / 10;
       const b = Math.sin(t) + Math.cos(t * 2) / 10;
       const s = Math.cos(t);
-      
+
       dummy.position.set(
         (particle.mx / 10) * a + xFactor + Math.cos((t / 10) * factor) + (Math.sin(t * 1) * factor) / 10,
         (particle.my / 10) * b + yFactor + Math.sin((t / 10) * factor) + (Math.cos(t * 2) * factor) / 10,
@@ -61,16 +61,16 @@ const Hero = () => {
 
   return (
     <section className="relative w-full h-screen overflow-hidden bg-black-midnight flex flex-col items-center justify-center">
-      
+
       {/* Background Image with Parallax */}
-      <motion.div 
+      <motion.div
         style={{ y: yBg }}
         className="absolute inset-0 z-0"
       >
-        <img 
-          src={bgImage} 
-          alt="Wedding Background" 
-          className="w-full h-full object-cover object-top opacity-30" 
+        <img
+          src={bgImage}
+          alt="Wedding Background"
+          className="w-full h-full object-cover object-top opacity-30"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-olive-dark via-transparent to-olive-dark opacity-60 mix-blend-multiply pointer-events-none"></div>
       </motion.div>
@@ -86,11 +86,11 @@ const Hero = () => {
         </Canvas>
       </div>
 
-      <motion.div 
+      <motion.div
         style={{ y: y1, opacity }}
         className="z-10 flex flex-col items-center justify-center text-center px-4 w-full h-full relative"
       >
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
@@ -110,7 +110,7 @@ const Hero = () => {
           <h1 className="text-5xl md:text-8xl font-display text-white-pearl tracking-wide drop-shadow-lg">Ajmal AR</h1>
         </motion.div>
 
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.5, delay: 1.5 }}
@@ -128,15 +128,23 @@ const Hero = () => {
           <span className="font-display text-2xl md:text-3xl text-olive-light tracking-wider">9th August 2026</span>
         </motion.div>
       </motion.div>
-      
-      <motion.div 
+
+      <motion.div
         style={{ y: y2, opacity }}
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce z-10"
+        className="absolute bottom-24 left-1/2 transform -translate-x-1/2 animate-bounce z-10"
       >
         <svg className="w-6 h-6 text-olive-light opacity-70" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
           <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
         </svg>
       </motion.div>
+
+      {/* Elegant Paint Explosion Splash Divider */}
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-20 transform translate-y-[1px]">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-32 md:h-56 filter drop-shadow-[0_-10px_20px_rgba(0,0,0,0.2)]">
+          {/* Solid splash */}
+          <path d="M0,120 L0,110 C80,110 150,40 200,80 C250,120 350,20 450,70 C550,120 600,10 750,80 C900,150 950,40 1050,90 C1100,110 1150,100 1200,110 L1200,120 Z" className="fill-white-off"></path>
+        </svg>
+      </div>
     </section>
   );
 };

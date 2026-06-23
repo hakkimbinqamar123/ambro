@@ -14,20 +14,20 @@ const EventDetails = () => {
 
   const events = [
     {
-      title: "Nikah Ceremony",
-      date: "August 9, 2026",
-      time: "10:00 AM",
-      venue: "Grand Mosque / Wedding Hall",
-      address: "123 Islamic Center, City Name",
+      title: "Nikkah",
+      date: "August 9, 2026 (Sunday)",
+      time: "11:30 AM to 12:00 PM",
+      venue: "T.A Convention Centre",
+      address: "Kayamkulam",
       direction: -50,
       scale: scale1
     },
     {
-      title: "Walima Reception",
-      date: "August 9, 2026",
-      time: "7:00 PM",
-      venue: "Luxury Banquet Hall",
-      address: "456 Celebration Ave, City Name",
+      title: "Reception",
+      date: "August 8, 2026 (Saturday)",
+      time: "From 3:00 PM",
+      venue: "T.A Convention Centre",
+      address: "Kayamkulam",
       direction: 50,
       scale: scale2
     }
